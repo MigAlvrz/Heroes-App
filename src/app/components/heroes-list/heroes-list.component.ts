@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Heroe } from 'src/app/model/heroe';
-import { HeroesServiceService } from '../../services/heroes-service.service';
+import { HeroesService } from '../../services/heroes.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { Router } from '@angular/router';
@@ -25,7 +25,7 @@ export class HeroesListComponent implements OnInit {
   dataSource: MatTableDataSource<Heroe>;
   private listSub: any;
 
-  constructor(public router: Router, public dialog: MatDialog, public HeroesService: HeroesServiceService) {
+  constructor(public router: Router, public dialog: MatDialog, public HeroesService: HeroesService) {
     this.dataSource = new MatTableDataSource(this.HeroesService.getHeroes());
   }
 

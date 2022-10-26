@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HeroesServiceService } from 'src/app/services/heroes-service.service';
+import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-new-hero',
@@ -12,7 +12,7 @@ export class NewHeroComponent implements OnInit {
   form: any;
   selectedHero: any;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private heroService: HeroesServiceService) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private heroService: HeroesService) {}
 
   ngOnInit(): void {
     this.selectedHero = this.heroService.getSelectedHero();

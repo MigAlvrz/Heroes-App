@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeroesServiceService } from '../../services/heroes-service.service';
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-delete-dialog',
@@ -9,7 +9,7 @@ import { HeroesServiceService } from '../../services/heroes-service.service';
 })
 export class DeleteDialogComponent implements OnInit {
   selectedHero: any;
-  constructor(public router: Router, public heroesService: HeroesServiceService, ) { }
+  constructor(public router: Router, public heroesService: HeroesService, ) { }
 
   ngOnInit(): void {
     this.selectedHero = this.heroesService.getSelectedHero();

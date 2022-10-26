@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesServiceService } from 'src/app/services/heroes-service.service';
+import { HeroesServiceService } from 'src/app/services/heroes.service';
 import { Router } from '@angular/router';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { MatDialog} from '@angular/material/dialog';

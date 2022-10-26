@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HeroesServiceService } from '../../services/heroes-service.service';
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   query: FormControl = new FormControl();
 
-  constructor(public router: Router, public heroService: HeroesServiceService) { }
+  constructor(public router: Router, public heroService: HeroesService) { }
 
   ngOnInit(): void {
   }
