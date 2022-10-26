@@ -1,0 +1,32 @@
+<div class="form-container">
+  <form [formGroup]="form" novalidate>
+    <ul class="form-list">
+      <li>
+        <div class="form-container">
+          <label for="name" class="form-label">Nombre</label><br>
+          <input formControlName="name" #name type="text" class="input-form"
+              id="name" aria-describedby="name"
+              [ngStyle]="{'border': form.controls['name'].invalid && (form.controls['name'].touched || form.controls['name'].dirty) ? '2px solid red': ''}"
+              >
+              <div *ngIf="form.controls['name'].invalid && (form.controls['name'].touched || form.controls['name'].dirty)" class="errorMessage">
+                Introduce un nombre válido
+              </div>
+        </div>
+        <div class="form-container">
+            <label for="alterEgo" class="form-label">Alter ego</label><br>
+            <input formControlName="alterEgo" #alterEgo type="text"
+                class="input-form" id="alterEgo"
+                [ngStyle]="{'border': form.controls['alterEgo'].invalid && (form.controls['alterEgo'].touched || form.controls['alterEgo'].dirty) ? '2px solid red': ''}"
+                >
+                <div *ngIf="form.controls['alterEgo'].invalid && (form.controls['alterEgo'].touched || form.controls['alterEgo'].dirty)" class="errorMessage">
+                  Introduce un alter ego válido
+                </div>
+        </div>
+      </li>
+      <li class="buttons-row">
+        <button mat-flat-button color="primary" [routerLink]="['/']">Volver</button>
+        <button type='submit' mat-flat-button color="warn" (click)="createNewHero(name.value, alterEgo.value)" [disabled]="!form.valid">Añadir</button>
+      </li>
+    </ul>
+  </form>
+</div>

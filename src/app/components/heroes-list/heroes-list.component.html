@@ -1,1 +1,35 @@
-<p>heroes-list works!</p>
+
+  <div class="input-container">
+    <input class="search-input" [formControl]="query"  placeholder="Filtrar" (keyup)="onFilter()">
+  </div>
+
+
+
+<mat-table [dataSource]="dataSource" matSort>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
+    <mat-cell *matCellDef="let row" [ngStyle]="{'justify-content':'space-between'}" (click)="selectHeroe(row.id.toString()); $event.stopPropagation()">
+          <span matLine >{{row.name}}</span>
+    </mat-cell>
+
+  </ng-container>
+
+  <ng-container matColumnDef="alterEgo">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Alter ego </mat-header-cell>
+    <mat-cell *matCellDef="let row" [ngStyle]="{'justify-content':'space-between'}" (click)="selectHeroe(row.id.toString()); $event.stopPropagation()">
+
+          <span matLine >{{row.alterEgo}}</span>
+          <div class="buttons-row">
+          <button mat-flat-button color="primary" (click)="modifyHero(row.id.toString())">Modificar</button>
+          <button mat-flat-button color="warn" (click)="deleteHero(row.id.toString()); $event.stopPropagation()">Borrar</button>
+          </div>
+
+    </mat-cell>
+
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="Columns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: Columns;"></mat-row>
+</mat-table>
+<mat-paginator pageSize=5></mat-paginator>

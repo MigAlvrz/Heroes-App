@@ -1,0 +1,20 @@
+.form-container {
+  margin-top: 10px;
+}
+
+.form-list {
+  list-style-type: none;
+}
+
+.form-list li {
+  display: inline;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.buttons-row button{
+  margin-top: 15px;
+}
+

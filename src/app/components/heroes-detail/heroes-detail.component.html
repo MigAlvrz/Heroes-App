@@ -1,1 +1,25 @@
-<p>heroes-detail works!</p>
+<ng-container *ngIf="selectedHero">
+  <div class="container">
+    <mat-card>
+      <mat-card-title>{{selectedHero.name}}</mat-card-title>
+      <mat-card-subtitle>{{selectedHero.alterEgo}}</mat-card-subtitle>
+      <mat-card-content>
+        <p>id: {{selectedHero.id}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="buttons-row">
+          <button mat-flat-button color="primary" [routerLink]="['/']" (click)="removeSelectedHero(); $event.stopPropagation()">Volver</button>
+          <button mat-flat-button color="primary" (click)="onModifyHero()">Modificar</button>
+          <button mat-flat-button color="warn" (click)="onDeleteHero()">Borrar</button>
+        </div>
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="!selectedHero">
+  <div class="notFound">
+    <h2>No se pudo encontrar al superhéroe</h2>
+    <button mat-flat-button color="primary" [routerLink]="['/']" >Volver</button>
+  </div>
+</ng-container>

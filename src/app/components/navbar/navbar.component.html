@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <div class="container">
+    <mat-list-item>
+      <span [routerLink]="['/']" routerLinkActive="active">Heroes App</span>
+    </mat-list-item>
+    <mat-list-item>
+      <div class="buttons-row">
+        <input class="search-input" [formControl]="query" #id id="id"  placeholder="buscar por ID">
+        <button  mat-raised-button color="warn"  (click)="onSearchHero(id.value)">Buscar</button>
+        <button  mat-raised-button color="accent" [routerLink]="['/new']" routerLinkActive="active">Añadir</button>
+      </div>
+    </mat-list-item>
+  </div>
+</mat-toolbar>
