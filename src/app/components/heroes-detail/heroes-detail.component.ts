@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesServiceService } from 'src/app/services/heroes.service';
+import { HeroesService } from 'src/app/services/heroes.service';
 import { Router } from '@angular/router';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { MatDialog} from '@angular/material/dialog';
@@ -14,7 +14,7 @@ export class HeroesDetailComponent implements OnInit {
   selectedHero: any;
   private sub: any;
 
-  constructor(public router: Router, public dialog: MatDialog, public HeroesService: HeroesServiceService) { }
+  constructor(public router: Router, public dialog: MatDialog, public HeroesService: HeroesService) { }
 
   ngOnInit(): void {
     this.selectedHero = this.HeroesService.getSelectedHero();
