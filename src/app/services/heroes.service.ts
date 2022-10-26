@@ -5,7 +5,7 @@ import { Heroe } from '../model/heroe';
 @Injectable({
   providedIn: 'root'
 })
-export class HeroesServiceService {
+export class HeroesService {
 
   heroes: Array<Heroe> =  [
     new Heroe("Daredevil", "Matt Murdock"),
