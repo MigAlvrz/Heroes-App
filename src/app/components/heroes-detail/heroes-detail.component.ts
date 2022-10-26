@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Heroe } from 'src/app/model/heroe';
 import { HeroesServiceService } from 'src/app/services/heroes-service.service';
-import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-heroes-detail',
@@ -23,6 +21,10 @@ export class HeroesDetailComponent implements OnInit {
     this.sub = this.HeroesService.getUpdate().subscribe(update => {
       this.selectedHero = this.HeroesService.getSelectedHero();
     })
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
   onDeleteHero = () => {

@@ -12,10 +12,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import {  MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewHeroComponent } from './components/new-hero/new-hero.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
@@ -41,7 +40,6 @@ import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
-    MatFormFieldModule,
     MatPaginatorModule,
     MatTableModule
   ],

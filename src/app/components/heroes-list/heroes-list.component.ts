@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime } from 'rxjs/internal/operators/debounceTime';
-import { distinctUntilChanged } from 'rxjs/internal/operators/distinctUntilChanged';
 import { Heroe } from 'src/app/model/heroe';
 import { HeroesServiceService } from '../../services/heroes-service.service';
 import { MatDialog } from '@angular/material/dialog';

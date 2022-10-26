@@ -20,7 +20,6 @@ var toolbar_1 = require("@angular/material/toolbar");
 var list_1 = require("@angular/material/list");
 var card_1 = require("@angular/material/card");
 var button_1 = require("@angular/material/button");
-var form_field_1 = require("@angular/material/form-field");
 var dialog_1 = require("@angular/material/dialog");
 var paginator_1 = require("@angular/material/paginator");
 var table_1 = require("@angular/material/table");
@@ -51,7 +50,6 @@ var AppModule = /** @class */ (function () {
                 card_1.MatCardModule,
                 button_1.MatButtonModule,
                 dialog_1.MatDialogModule,
-                form_field_1.MatFormFieldModule,
                 paginator_1.MatPaginatorModule,
                 table_1.MatTableModule
             ],

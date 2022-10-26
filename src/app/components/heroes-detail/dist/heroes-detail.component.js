@@ -33,6 +33,9 @@ var HeroesDetailComponent = /** @class */ (function () {
             _this.selectedHero = _this.HeroesService.getSelectedHero();
         });
     };
+    HeroesDetailComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
     HeroesDetailComponent = __decorate([
         core_1.Component({
             selector: 'app-heroes-detail',
